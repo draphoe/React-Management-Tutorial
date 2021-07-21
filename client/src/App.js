@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Customer from './components/customer';
 import Paper from '@material-ui/core/Paper';
@@ -19,7 +19,7 @@ const styles = theme => ({
   root: {
     width: '100%',
     marginTop : theme.spacing.unit * 3,
-    overflowX : 'autho',
+    overflowX : 'auto',
   },
   table: {
     minWidth: 1080
@@ -70,7 +70,7 @@ class App extends React.Component {
             </TableRow>
           </TableHead>    
           <TableBody>
-            {this.state.customers ? this.state.customers.map(c=> { return( <Customer key={c.id} id={c.id} image={c.image} name={c.name} gender={c.gender} DoB={c.DoB} job={c.job}/> ) }) : 
+            {this.state.customers ? this.state.customers.map(c=> { return( <Customer key={c.id} id={c.id} image={c.image} name={c.name} gender={c.gender} dob={c.dob} job={c.job}/> ) }) : 
             <TableRow>
               <TableCell colSpan="6" align="center">
                 <CircularProgress className={classes.progress} variant="determinate" value={this.state.completed}/>
@@ -80,7 +80,6 @@ class App extends React.Component {
           </TableBody>                
         </Table>
       </Paper>
-
     );  
   }
 }
