@@ -1,5 +1,5 @@
 import React from 'react';
-import { Component } from 'react';
+// import { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Customer from './components/customer';
@@ -82,10 +82,11 @@ class App extends React.Component {
                   <TableCell>성별</TableCell>
                   <TableCell>생년월일</TableCell>
                   <TableCell>직업</TableCell>
+                  <TableCell>설정</TableCell>
               </TableRow>
             </TableHead>    
             <TableBody>
-              {this.state.customers ? this.state.customers.map(c=> { return( <Customer key={c.id} id={c.id} image={c.image} name={c.name} gender={c.gender} dob={c.dob} job={c.job}/> ) }) : 
+              {this.state.customers ? this.state.customers.map(c=> { return( <Customer stateRefresh={this.stateRefresh} key={c.id} id={c.id} image={c.image} name={c.name} gender={c.gender} dob={c.dob} job={c.job}/> ) }) : 
               <TableRow>
                 <TableCell colSpan="6" align="center">
                   <CircularProgress className={classes.progress} variant="determinate" value={this.state.completed}/>
